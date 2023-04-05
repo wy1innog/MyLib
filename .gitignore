@@ -83,3 +83,10 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+#gradlew
+gradlew
+gradlew.bat
+
+#.idea
+.idea
