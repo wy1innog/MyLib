@@ -1,18 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
 
 android {
     compileSdk rootProject.ext.build_config.compileSdk
 
     defaultConfig {
-        applicationId rootProject.ext.build_config.applicationId
         minSdk rootProject.ext.build_config.minSdk
         targetSdk rootProject.ext.build_config.targetSdk
         versionCode rootProject.ext.build_config.versionCode
         versionName rootProject.ext.build_config.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -28,9 +28,6 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-    implementation project(':jirin')
-
     implementation rootProject.ext.base.appcompat
     implementation rootProject.ext.base.material
     implementation rootProject.ext.base.constraintlayout

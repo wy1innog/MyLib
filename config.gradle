@@ -1,0 +1,11 @@
+ext {
+    build_config = [
+            applicationId           : 'com.example.mylib',
+            compileSdk              : 30,
+            minSdk                  : 23,
+            targetSdk               : 30,
+            versionCode             : 1,
+            versionName             : 'v1.0.0',
+            javaVersion             : JavaVersion.VERSION_1_8
+    ]
+}
