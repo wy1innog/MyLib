@@ -12,3 +12,4 @@ dependencyResolutionManagement {
 rootProject.name = "MyLib"
 include ':app'
 include ':jirin'
+include ':jirin-serial'
