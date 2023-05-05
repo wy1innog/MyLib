@@ -5,6 +5,10 @@ ext {
             constraintlayout        : 'androidx.constraintlayout:constraintlayout:2.0.4',
     ]
 
+    third_party = [
+            commons_langs           : 'org.apache.commons:commons-lang3:3.12.0',
+    ]
+
     test = [
             junit                   : 'junit:junit:4.+',
             junit_ext               : 'androidx.test.ext:junit:1.1.2',

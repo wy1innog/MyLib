@@ -3,4 +3,6 @@
     <string name="badge_notification_empty">暂无通知</string>
     <string name="badge_notification_content">您有%d条未读通知</string>
     <string name="badge_notification_contents">您有%d条未读通知</string>
+    <string name="on">开启</string>
+    <string name="off">关闭</string>
 </resources>

@@ -3,4 +3,6 @@
     <string name="badge_notification_empty">No notice</string>
     <string name="badge_notification_content">You have %d unread notice</string>
     <string name="badge_notification_contents">You have %d unread notices</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
 </resources>
