@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.jirin">
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
+    <application
+        android:supportsRtl="true"
+        android:allowBackup="true">
+
+        <service
+            android:name=".service.FloatViewClickService"
+            android:exported="true"
+            android:enabled="true">
+        </service>
+
+        <service
+            android:name=".service.AutoClickService"
+            android:label="@string/auto_click"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:exported="true"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/auto_click_accessibility_config">
+            </meta-data>
+        </service>
+    </application>
 </manifest>

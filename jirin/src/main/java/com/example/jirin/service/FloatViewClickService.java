@@ -8,7 +8,6 @@ import android.graphics.PixelFormat;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
-import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,7 +18,7 @@ import androidx.annotation.Nullable;
 
 import com.example.jirin.R;
 import com.example.jirin.utils.LogUtil;
-import com.example.jirin.utils.PermissionUtil;
+import com.example.jirin.utils.ToastUtil;
 import com.example.jirin.widget.listener.FloatViewTouchListener;
 
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
@@ -35,6 +34,9 @@ import java.util.concurrent.TimeUnit;
  * @Date 2023/5/4
  * @Description 悬浮按钮点击Service，通过这个服务，可以创建可移动位置和点击的悬浮按钮。
  * 被创建的悬浮按钮可以显示在其他应用的上面。
+ * ===============================================================================================
+ * 在使用此服务的时候，需要引入org.apache.commons:commons-lang3依赖，代码中BasicThreadFactory用到了此lib
+ * ===============================================================================================
  * [注意：使用FloatViewClickService服务需要给应用申请android.permission.SYSTEM_ALERT_WINDOW权限，
  * 如果是在Android 6.0的版本上，需要动态申请android.permission.SYSTEM_ALERT_WINDOW权限]
  */
@@ -118,6 +120,9 @@ public class FloatViewClickService extends Service implements
         mView.setOnTouchListener(mFloatViewTouchListener);
     }
 
+    public View getView() {
+        return mView;
+    }
 
     @Override
     public void onDrag(View view, WindowManager.LayoutParams params, MotionEvent event) {
@@ -134,8 +139,8 @@ public class FloatViewClickService extends Service implements
             startAutoClick();
             isOn = true;
         }
-        String text = isOn ? getResources().getString(R.string.on) :
-                getResources().getString(R.string.off);
+        String text = isOn ? getResources().getString(R.string.off) :
+                getResources().getString(R.string.on);
         ((TextView) mView.findViewById(R.id.tv_btn)).setText(text);
     }
 
@@ -146,7 +151,8 @@ public class FloatViewClickService extends Service implements
                 mView.getLocationOnScreen(location);
                 if (AutoClickService.getInstance() == null) {
                     LogUtil.d(TAG, "autoClickRunnable: AutoClickService unable");
-                    PermissionUtil.setAccessibilitySettings(FloatViewClickService.this);
+                    ToastUtil.showShortToast(FloatViewClickService.this,
+                            R.string.tips_auto_click_service_unable);
                 } else {
                     //实际自动点击的位置在悬浮按钮的最右边位置
                     int x = location[0] + mView.getRight() + 10;

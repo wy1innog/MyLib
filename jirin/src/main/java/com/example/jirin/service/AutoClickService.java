@@ -81,18 +81,21 @@ public class AutoClickService extends AccessibilityService {
     @Override
     public boolean onUnbind(Intent intent) {
         mInstance = null;
+        LogUtil.d(TAG, "onUnbind: unbind AutoClickService");
         return super.onUnbind(intent);
     }
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
         mInstance = null;
+        LogUtil.d(TAG, "onTaskRemoved: task removed AutoClickService");
         super.onTaskRemoved(rootIntent);
     }
 
     @Override
     public void onDestroy() {
         mInstance = null;
+        LogUtil.d(TAG, "onDestroy: destroy AutoClickService");
         super.onDestroy();
     }
 }

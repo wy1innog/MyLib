@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyLib</string>
+    <string name="set_badge">Set Badge</string>
+    <string name="text_start_auto_click">Start Auto Click Service</string>
+    <string name="text_stop_auto_click">Stop Auto Click Service</string>
+    <string name="tips_open_system_alert_permission">Open the hover window permission</string>
+    <string name="tips_open_auto_click_service">Open Auto click service</string>
 </resources>

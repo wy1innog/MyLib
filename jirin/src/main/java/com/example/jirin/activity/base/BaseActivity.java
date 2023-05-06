@@ -12,6 +12,9 @@ import com.example.jirin.utils.LogUtil;
 
 import java.lang.ref.WeakReference;
 
+/**
+ * @author PengFan
+ */
 public abstract class BaseActivity extends Activity {
     protected final String TAG = this.getClass().getSimpleName();
 

@@ -7,6 +7,9 @@ import android.text.TextUtils;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+/**
+ * @author PengFan
+ */
 public class DateUtil {
     private static final String TAG = "DateUtil";
 

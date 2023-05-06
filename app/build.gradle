@@ -35,6 +35,8 @@ dependencies {
     implementation rootProject.ext.base.material
     implementation rootProject.ext.base.constraintlayout
 
+    implementation rootProject.ext.third_party.commons_langs
+
     implementation rootProject.ext.test.junit
     implementation rootProject.ext.test.junit_ext
     implementation rootProject.ext.test.espresso_core

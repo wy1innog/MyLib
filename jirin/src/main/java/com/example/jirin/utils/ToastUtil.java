@@ -3,6 +3,9 @@ package com.example.jirin.utils;
 import android.content.Context;
 import android.widget.Toast;
 
+/**
+ * @author PengFan
+ */
 public class ToastUtil {
     private static Toast mToast;
     public static void showShortToast(Context context, String msg) {

@@ -1,8 +1,11 @@
 <resources>
+    <string name="lib_name">精卫</string>
     <string name="badge_notification_title">应用通知</string>
     <string name="badge_notification_empty">暂无通知</string>
     <string name="badge_notification_content">您有%d条未读通知</string>
     <string name="badge_notification_contents">您有%d条未读通知</string>
     <string name="on">开启</string>
     <string name="off">关闭</string>
+    <string name="tips_auto_click_service_unable">自动点击服务未开启</string>
+    <string name="auto_click">自动点击</string>
 </resources>

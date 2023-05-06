@@ -86,7 +86,7 @@ public class FloatViewTouchListener implements View.OnTouchListener {
     private boolean isDragging(MotionEvent event) {
         double xDistance = Math.pow(event.getRawX() - startTouchX, 2);
         double yDistance = Math.pow(event.getRawY() - startTouchY, 2);
-        return xDistance + yDistance > startDragDistance * startDragDistance;
+        return xDistance + yDistance > startDragDistance;
     }
 
     @Override
@@ -121,10 +121,20 @@ public class FloatViewTouchListener implements View.OnTouchListener {
     }
 
     public interface OnFloatViewOnDragListener {
+        /**
+         * 拖拽监听回调
+         * @param view 被监听的view
+         * @param params view的layout params
+         * @param event 此时屏幕上的触摸事件
+         */
         void onDrag(View view, WindowManager.LayoutParams params, MotionEvent event);
     }
 
     public interface OnFloatViewOnClickListener {
+        /**
+         * 点击监听回调
+         * @param view 被监听的view
+         */
         void onClick(View view);
     }
 }

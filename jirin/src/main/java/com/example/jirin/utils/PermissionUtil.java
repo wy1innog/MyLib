@@ -16,6 +16,22 @@ import java.util.List;
  * @Description 权限或一些功能的检测工具类
  */
 public class PermissionUtil {
+    private static final String AUTO_CLICK_SERVICE_ID
+            = "com.example.jirin.service.AutoClickService";
+
+    /**
+     * 检查AutoClickService是否已经开启
+     * @param context 上下文对象
+     * @param packageName 使用此lib库的包名
+     * @return 如果已经开启，返回true；如果还没有开启，返回false。
+     */
+    public static boolean checkAutoClickServiceEnable(Context context, String packageName) {
+        if (TextUtils.isEmpty(packageName)) {
+            return false;
+        }
+        String serviceId = packageName + "/" + AUTO_CLICK_SERVICE_ID;
+        return checkAccessibilityServiceEnable(context, serviceId);
+    }
 
     /**
      * 检查无障碍服务是否已开启

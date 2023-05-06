@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyLib</string>
+    <string name="set_badge">设置角标</string>
+    <string name="text_start_auto_click">开启自动点击服务</string>
+    <string name="text_stop_auto_click">关闭自动点击服务</string>
+    <string name="tips_open_system_alert_permission">打开悬浮窗权限</string>
+    <string name="tips_open_auto_click_service">打开自动点击服务</string>
 </resources>

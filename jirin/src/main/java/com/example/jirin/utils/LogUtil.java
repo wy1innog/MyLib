@@ -2,6 +2,9 @@ package com.example.jirin.utils;
 
 import android.util.Log;
 
+/**
+ * @author PengFan
+ */
 public class LogUtil {
     private static final String TAG = "JiRin-";
     private static boolean IS_DEBUG = false;
